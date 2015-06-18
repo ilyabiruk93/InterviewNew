@@ -12,12 +12,10 @@ public class Db {
     private static String password = "123";//Пароль пользователя
     private static String url = "jdbc:mysql://127.0.0.1:3306/interview_new";//URL адрес
 	private static Connection connection;
-	public static ResultSet executeSQL(String sqlString){
-		return null;
-	}
-
-	public static void executeUpdate(String command) throws SQLException {
-		getStatement().executeQuery(command);
+	
+	
+	public static void Update(String command) throws SQLException {
+		getStatement().executeUpdate(command);
 		
 	}
 	
@@ -32,6 +30,12 @@ public class Db {
 			connection = DriverManager.getConnection(url, user, password);//Установка соединения с БД
 		}
 		return connection;
+	}
+
+	public static ResultSet Show(String sqlString) throws SQLException {
+		// TODO Auto-generated method stub
+		ResultSet rs=getStatement().executeQuery(sqlString);
+		return rs;		
 	}
 
 }

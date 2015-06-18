@@ -2,8 +2,6 @@ package interview.model.commands;
 
 import interview.dao.UsersDao;
 
-import java.util.Map;
-
 public class RegisterCommand implements ICommand {
 	
 	private String firstName;
@@ -38,7 +36,7 @@ public class RegisterCommand implements ICommand {
 
 
 	@Override
-	public Map<String, String> execute() {
+	public String execute() {
 		// TODO Auto-generated method stub
 		UsersDao.createUser(firstName, lastName);
 		return null;
